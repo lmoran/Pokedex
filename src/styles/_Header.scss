@@ -1,0 +1,21 @@
+.Header {
+  background: $header-bgd;
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 1em;
+    &--logo {
+      max-width: 200px;
+      max-height: 70px;
+    }
+    a {
+      text-decoration: none;
+      color: $color-a;
+    }
+    img {
+      width: 100%;
+    }
+  }
+}

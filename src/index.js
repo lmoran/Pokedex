@@ -1,3 +1,4 @@
+import Router from './routes/routes'
 import './styles/styles.scss'
-import './images/loading.gif'
-console.log('hola')
+
+window.addEventListener('load', Router)

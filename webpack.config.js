@@ -36,8 +36,8 @@ module.exports = {
               outputPath: 'images',
               useRelativePath: true
             }
-          },
-          {
+          }
+          /* {
             loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
@@ -60,7 +60,7 @@ module.exports = {
                 quality: 75
               }
             }
-          }
+          } */
         ]
       }
     ]
