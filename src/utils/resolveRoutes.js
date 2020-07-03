@@ -1,9 +1,21 @@
 const resolveRoutes = route => {
-  if (route.length <= 3) {
-    let validRoute = route === '/' ? route : '/:id'
-    return validRoute
+  if (route != 'about') {
+    if (route === '/') {
+      return route
+    } else if (route.length <= 3) {
+      return '/:id'
+    } else if (route.includes('search')) {
+      return '/:search'
+    }
   }
-  //para casos como /about
+  console.log('se fue por route: ' + route)
   return `/${route}`
+
+  // if (route.length <= 3) {
+  //   let validRoute = route === '/' ? route : '/:id'
+  //   return validRoute
+  // }
+  // //para casos como /about
+  // return `/${route}`
 }
 export default resolveRoutes

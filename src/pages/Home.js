@@ -1,24 +1,33 @@
-import getData from '../utils/getData'
+import totalPokemons from '../utils/totalPokemon'
 
 const Home = async () => {
-  const Character = await getData()
+  const Character = await totalPokemons()
+  console.log(Character)
   const view = `
   <div class="Characters">
-    ${Character.results.map(
-      character => `
+    <div class="Characters">
+        <a href = #/search>busqueda</a>
+    </div>
+      ${Character.map(
+        character => `
       <article class="Characters__card">
         <div class="characters__card--info">
-          <img src="" alt="pokemon">
+          <img src="${character.sprites.front_default}" alt="pokemon">
           <h2 class=" ">${character.name}</h2>
-          <p>Pokedesk ID: </p>
-          <span>types</span>
+          <p>Pokedesk ID: ${character.id} </p>
+          <span> ${character.types
+            .map(
+              type =>
+                `<span class="${type.type.name}"> ${type.type.name}</span>`
+            )
+            .join('')} </span>
         </div>
-        <a href="#/id">
+        <a href="#/${character.id}">
           <button class="characters__card--btn">Details</button>
         </a>
-      </article>
       `
-    )}
+      ).join('')}
+      </article>
   </div>
   `
   return view
