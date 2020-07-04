@@ -8,7 +8,6 @@ const resolveRoutes = route => {
       return '/:search'
     }
   }
-  console.log('se fue por route: ' + route)
   return `/${route}`
 
   // if (route.length <= 3) {

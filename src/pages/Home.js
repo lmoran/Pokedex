@@ -2,8 +2,9 @@ import totalPokemons from '../utils/totalPokemon'
 
 const Home = async () => {
   const Character = await totalPokemons()
-  console.log(Character)
+
   const view = `
+  
   <div class="Characters">
     <div class="Characters">
         <a href = #/search>busqueda</a>
