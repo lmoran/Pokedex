@@ -4,6 +4,8 @@ import Character from '../pages/Character'
 import Search from '../pages/Search'
 import getHash from '../utils/getHash'
 import resolveRoutes from '../utils/resolveRoutes'
+import getData from '../utils/getData'
+import SearchPoke from '../pages/searchpoke'
 
 const routes = {
   '/': Home,
@@ -23,10 +25,17 @@ const router = async () => {
   let render = routes[route] ? routes[route] : Error404
 
   content.innerHTML = await render()
-
-  /* if (loader.children[0] != null) {
-    loader.children[0].remove()
-  } */
+  const form = null || document.querySelector('#form')
+  const info = null || document.querySelector('#poke-info')
+  if (form && info) {
+    form.addEventListener('submit', async event => {
+      event.preventDefault()
+      const data = new FormData(form)
+      const poke = await getData(`${data.get('name')}`)
+      const html = SearchPoke(poke)
+      info.innerHTML = html
+    })
+  }
 }
 
 export default router
