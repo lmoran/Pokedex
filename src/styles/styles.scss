@@ -1,13 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
-@import "variables.scss";
+@import "Variables.scss";
+@import "Mixins.scss";
+@import "Generals.scss";
 @import "Header.scss";
-
-* {
-  box-sizing: border-box;
-}
-body {
-  font-family: $font;
-  display: grid;
-  grid-template-rows: 70px 1fr;
-  margin: 0;
-}
+@import "Home.scss";

@@ -1,4 +1,25 @@
-$bgd-color: pink;
 $header-bgd: #1c3643;
 $font: "Lato", sans-serif;
 $color-a: #ffffff;
+$bgd-primario: #f4f4f7;
+$bgd-card: #ffffff;
+
+$types: (
+  poison: #b97fc9,
+  grass: #2ecc71,
+  psychic: #e84393,
+  ground: #e77f67,
+  rock: #cc8e35,
+  normal: #a4acaf,
+  fire: #e74c3c,
+  water: #3498db,
+  electric: #f1c40f,
+  ghost: #6c5ce7,
+  dragon: #706fd3,
+  fairy: #f78fb3,
+  ice: #74b9ff,
+  bug: #1abc9c,
+  steel: #b2bec3,
+  flying: #3dc7ef,
+  fighting: #d56723,
+);

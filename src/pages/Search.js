@@ -11,8 +11,10 @@ const Search = () => {
         <img src="./images/pokemonlogo.svg" alt="pokelogo">
       </div>
       <div class="poke-info" id="poke-info">
-        
       </div>
+      <a href= "#/">
+      <button>Back</button>
+      </a>
     </article>
   `
   return view

@@ -1,5 +1,5 @@
 import getData from './getData'
-const pokemones = 50
+const pokemones = 150
 
 const totalPokemons = async () => {
   const pokemons = []

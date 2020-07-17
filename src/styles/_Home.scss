@@ -1,0 +1,54 @@
+.Characters {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 1em;
+  &__search {
+    text-align: end;
+    &-text {
+      @include btn;
+      background-color: #7dcd40;
+      margin-bottom: 1em;
+      color: white;
+      padding: 0.5em 2em;
+      &:hover {
+        background-color: #5ba125;
+      }
+    }
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    grid-gap: 0.5em;
+    &-card {
+      @include card;
+      &-details {
+        display: flex;
+        margin-bottom: 0.8em;
+      }
+      &-info {
+        &-name {
+        }
+        &-id {
+          margin: 0.5em 0;
+        }
+        span {
+          color: white;
+
+          text-align: center;
+          font-size: 12px;
+          padding: 0.2em 0.8em;
+          margin-right: 2px;
+          text-transform: capitalize;
+          border-radius: 30px;
+        }
+      }
+      &-btn {
+        @include btn;
+        background: rgba(96, 210, 255, 0.2);
+        &:hover {
+          background: rgba(96, 210, 255, 0.596);
+        }
+      }
+    }
+  }
+}
