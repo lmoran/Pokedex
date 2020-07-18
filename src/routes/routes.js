@@ -27,7 +27,22 @@ const router = async () => {
   let route = await resolveRoutes(hash)
   let render = routes[route] ? routes[route] : Error404
 
-  content.innerHTML = await render()
+  if (content.children[0]) {
+    content.children[0].remove()
+  }
+  const $load = document.createElement('img')
+  setAttributes($load, {
+    src: './images/loading.gif',
+    width: '300',
+    height: '300',
+    style: 'margin-top: 5em'
+  })
+
+  content.append($load)
+  setTimeout(async () => {
+    content.innerHTML = await render()
+  }, 500)
+
   const form = null || document.querySelector('#form')
   const info = null || document.querySelector('#poke-info')
 

@@ -6,7 +6,7 @@
   background-color: $bgd-card;
   box-shadow: 4px 4px 0 0 rgba(0, 0, 0, 0.1);
 }
-
+//colores types
 @each $type, $color in $types {
   .#{$type} {
     background: $color;

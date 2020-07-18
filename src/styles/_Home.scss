@@ -1,17 +1,17 @@
 .Characters {
   max-width: 950px;
-  margin: 0 auto;
+  /*   margin: 0 auto; */
   padding: 1em;
   &__search {
     text-align: end;
     &-text {
       @include btn;
-      background-color: #7dcd40;
+      background-color: $bgd-search;
       margin-bottom: 1em;
       color: white;
       padding: 0.5em 2em;
       &:hover {
-        background-color: #5ba125;
+        background-color: $bgd-search-hover;
       }
     }
   }
@@ -44,9 +44,9 @@
       }
       &-btn {
         @include btn;
-        background: rgba(96, 210, 255, 0.2);
+        background: $bgd-btn;
         &:hover {
-          background: rgba(96, 210, 255, 0.596);
+          background: $bgd-btn-hover;
         }
       }
     }

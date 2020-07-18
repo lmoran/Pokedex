@@ -14,49 +14,55 @@ const Character = async () => {
   const imgBackShiny = character.sprites.back_shiny
 
   const view = `
-  <div class="Characters-inner" id="Character">
-    <article class="Character-card">
-      <div class = "Character-card--info">
+  <div class="Characters" id="Character">
+    <article class="Characters__search">
+        <a href = "#/search" class="Characters__search-text">Search Pokemon</a>
+        <a href = "#/" class="Characters__search-text home">Home</a>
+    </article>
+    <article class="Characters__inner">
+      <div class = "Characters__inner-info">
         <h1>${name}</h1>
-        <h1>PokedexID: ${id}</h1>
-        <h1>Weight: ${weight}</h1>
-        <h1>Height: ${height}</h1>
+        <h3>PokedexID: #${id}</h3>
+        <h4>Weight: ${parseInt(weight) / 10} Kg</h4>
+        <h4>Height: ${parseInt(height) / 10} m</h4>
       </div>
-      <div class = "Character-card--details">
-        <h2>Type(s)</h2>
+      <div class = "Characters__inner-types">
+        <h3>Type(s)</h3>
         ${character.types
-          .map(
-            type => `<span class="${type.type.name}"> ${type.type.name}</span>`
-          )
+          .map(type => `<p class="${type.type.name}"> ${type.type.name}</p>`)
           .join('')}
-          <h2>Normal</h2>
+      </div> 
+      <div class = "Characters__inner-images">
+          <h3>Normal</h3>
           <img src="${imgNormal}"/ alt= pokemon">
           <img src="${imgBack}"/ alt= pokemon">
-          <h2>Shiny</h2>
+      </div> 
+      <div class = "Characters__inner-images">
+          <h3>Shiny</h3>
           <img src="${imgShiny}"/ alt= pokemon">
           <img src="${imgBackShiny}"/ alt= pokemon">
-      </div>     
+      </div>    
     </article>
-    <article class="Character-card">
-    <span><b>HP: </b>${character.stats[0].base_stat}</span>
-    <span><b>Special-attack: </b>${character.stats[3].base_stat}</span>
-    <span><b>special-defense: </b>${character.stats[4].base_stat}</span>
-    <span><b>Attack: </b>${character.stats[1].base_stat}</span>
-    <span><b>Defense: </b>${character.stats[2].base_stat}</span>
-    <span><b>Speed: </b>${character.stats[5].base_stat}</span>
+    <article class="Characters__inner">
+      <span><b>HP: </b>${character.stats[0].base_stat}</span>
+      <span><b>Special-attack: </b>${character.stats[3].base_stat}</span>
+      <span><b>special-defense: </b>${character.stats[4].base_stat}</span>
+      <span><b>Attack: </b>${character.stats[1].base_stat}</span>
+      <span><b>Defense: </b>${character.stats[2].base_stat}</span>
+      <span><b>Speed: </b>${character.stats[5].base_stat}</span>
     </article>
   `
 
   if (parseInt(ids) > 1) {
     const back = `  
-    <article class="Character-end" id = "end">  
+    <article class="Characters__end" id = "end">  
       <a href="#/${backCharacter.id}">
+      <span><b> < </b>#${backCharacter.id} </span>
       <img src="${backCharacter.sprites.front_default}"/>
-      back
       </a>
       <a href="#/${nextCharacter.id}"> 
       <img src="${nextCharacter.sprites.front_default}"/>
-      next
+      <span>#${nextCharacter.id} <b> > </b></span>
       </a>
     </article>
   </div>
@@ -64,10 +70,10 @@ const Character = async () => {
     var viewEnd = `${view}${back}`
   } else {
     const next = `  
-      <article class="Character-end" id = "end">  
+      <article class="Characters__end1" id = "end">  
       <a href="#/${nextCharacter.id}"> 
       <img src="${nextCharacter.sprites.front_default}"/>
-      next
+      <span>#${nextCharacter.id} <b> > </b></span>
       </a>
       </article>
     </div>

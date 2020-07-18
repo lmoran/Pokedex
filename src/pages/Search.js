@@ -1,6 +1,7 @@
 import '../images/pokemonlogo.svg'
 const Search = () => {
   const view = `
+  <div class="contentss">
     <h1>Search Pokemon</h1>
     <form id= "form">
       <input type= "text" name="name" placeholder= "Search Pokemon"/>
@@ -16,6 +17,7 @@ const Search = () => {
       <button>Back</button>
       </a>
     </article>
+    </div>
   `
   return view
 }
