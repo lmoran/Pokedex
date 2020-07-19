@@ -1,23 +1,23 @@
 import '../images/pokemonlogo.svg'
 const Search = () => {
   const view = `
-  <div class="contentss">
-    <h1>Search Pokemon</h1>
-    <form id= "form">
-      <input type= "text" name="name" placeholder= "Search Pokemon"/>
-      <button>Search</button>
+  <div class="Search">
+    <h1 class="Search__title" >Search Pokemon</h1>
+    <form class= "Search__form" id= "form">
+      <input type= "text" name="name" placeholder= "Pokemon ID"/>
+      <button class= "Search__form-btn" >Search</button>
     </form>
-    <article>
-      <div>
+    <article class= "Search__details">
+      <div class= "Search__details-header">
         <img src="./images/pokemonlogo.svg" alt="pokelogo">
       </div>
-      <div class="poke-info" id="poke-info">
+      <div class="Search__details-info" id="poke-info">
       </div>
-      <a href= "#/">
-      <button>Back</button>
-      </a>
     </article>
-    </div>
+      <a class="Search__details-btn" href= "#/">
+      <button class="Search__details-btn">Back</button>
+      </a>
+  </div>
   `
   return view
 }

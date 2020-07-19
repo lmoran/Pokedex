@@ -27,6 +27,8 @@ const router = async () => {
   let route = await resolveRoutes(hash)
   let render = routes[route] ? routes[route] : Error404
 
+  /*  setTimeout(() => {
+  }, 1000) */
   if (content.children[0]) {
     content.children[0].remove()
   }
@@ -42,37 +44,40 @@ const router = async () => {
   setTimeout(async () => {
     content.innerHTML = await render()
   }, 500)
+  setTimeout(() => {
+    const form = null || document.querySelector('#form')
+    const info = null || document.querySelector('#poke-info')
+    if (form && info) {
+      form.addEventListener('submit', async event => {
+        event.preventDefault()
 
-  const form = null || document.querySelector('#form')
-  const info = null || document.querySelector('#poke-info')
+        if (info.children[0]) {
+          info.children[0].remove()
+        }
+        const $loads = document.createElement('img')
+        setAttributes($loads, {
+          src: './images/loading.gif',
+          width: '150',
+          height: '150',
+          style: 'margin-top: 1.5em'
+        })
 
-  if (form && info) {
-    form.addEventListener('submit', async event => {
-      event.preventDefault()
+        info.append($loads)
 
-      if (info.children[0]) {
-        info.children[0].remove()
-      }
-      const $load = document.createElement('img')
-      setAttributes($load, {
-        src: './images/loading.gif',
-        width: '100',
-        height: '100'
+        try {
+          const data = new FormData(form)
+          const poke = await getData(`${data.get('name')}`)
+          const html = await SearchPoke(poke)
+          setTimeout(() => {
+            info.innerHTML = html
+          }, 500)
+        } catch (error) {
+          swal('Lo sentimos', 'Pokemon no encontrado', 'error')
+          $loads.remove()
+        }
       })
-
-      info.append($load)
-
-      try {
-        const data = new FormData(form)
-        const poke = await getData(`${data.get('name')}`)
-        const html = SearchPoke(poke)
-        info.innerHTML = html
-      } catch (error) {
-        swal('Lo sentimos', 'Pokemon no encontrado', 'error')
-        $load.remove()
-      }
-    })
-  }
+    }
+  }, 500)
 }
 
 export default router
