@@ -2,25 +2,29 @@
   max-width: 950px;
   /*   margin: 0 auto; */
   padding: 1em;
-  &__search {
+  &__searchs {
     text-align: end;
+    @include media(mobile) {
+      text-align: center;
+    }
     &-text {
-      @include btn;
-      background-color: $bgd-search;
-      margin-bottom: 1em;
-      color: white;
-      padding: 0.5em 2em;
-      &:hover {
-        background-color: $bgd-search-hover;
-      }
+      @include btn-text;
     }
   }
   &__items {
     display: grid;
-    grid-template-columns: repeat(3, minmax(280px, 1fr));
     grid-gap: 0.5em;
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+    @include media(desktop-s) {
+      grid-template-columns: repeat(2, minmax(280px, 1fr));
+    }
+    @include media(mobile) {
+      grid-template-columns: minmax(280px, 1fr);
+    }
     &-card {
       @include card;
+      animation: cards 0.8s linear;
+
       &-details {
         display: flex;
         margin-bottom: 0.8em;

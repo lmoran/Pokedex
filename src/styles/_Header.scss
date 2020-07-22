@@ -9,10 +9,17 @@
     &--logo {
       max-width: 200px;
       max-height: 70px;
+      @include media(mobile) {
+        max-width: 150px;
+        max-height: 50px;
+      }
     }
     a {
       text-decoration: none;
       color: $color-a;
+      @include media(mobile) {
+        font-size: 14px;
+      }
     }
     img {
       width: 100%;

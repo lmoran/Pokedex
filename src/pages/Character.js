@@ -43,7 +43,7 @@ const Character = async () => {
           <img src="${imgBackShiny}"/ alt= pokemon">
       </div>    
     </article>
-    <article class="Characters__inner">
+    <article class="Characters__inner1">
       <span><b>HP: </b>${character.stats[0].base_stat}</span>
       <span><b>Special-attack: </b>${character.stats[3].base_stat}</span>
       <span><b>special-defense: </b>${character.stats[4].base_stat}</span>

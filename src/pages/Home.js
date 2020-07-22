@@ -5,8 +5,8 @@ const Home = async () => {
 
   const view = `
   <div class="Characters">
-    <div class="Characters__search">
-        <a href = "#/search" class="Characters__search-text">Search Pokemon</a>
+    <div class="Characters__searchs">
+        <a href = "#/search" class="Characters__searchs-text">Search Pokemon</a>
     </div>
     <div class="Characters__items">
         ${Character.map(

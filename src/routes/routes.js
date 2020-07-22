@@ -35,8 +35,8 @@ const router = async () => {
   const $load = document.createElement('img')
   setAttributes($load, {
     src: './images/loading.gif',
-    width: '300',
-    height: '300',
+    width: '250',
+    height: '250',
     style: 'margin-top: 5em'
   })
 
@@ -57,8 +57,8 @@ const router = async () => {
         const $loads = document.createElement('img')
         setAttributes($loads, {
           src: './images/loading.gif',
-          width: '150',
-          height: '150',
+          width: '120',
+          height: '120',
           style: 'margin-top: 1.5em'
         })
 
