@@ -1,4 +1,7 @@
 lenguaje: node_js
+language: sass
+before_install:
+  - gem install sass
 cache:
   directories:
     - ~/.npm
@@ -8,6 +11,8 @@ git:
   depth: 3
 script:
   - yarn build
+  - "testtravis.rb"
+
 deploy:
   provider: pages
   edge: true
