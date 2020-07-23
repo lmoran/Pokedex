@@ -1,9 +1,9 @@
-@import "Variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap");
-@import "Mixins.scss";
-@import "Generals.scss";
-@import "Header.scss";
-@import "Home.scss";
-@import "Characters.scss";
-@import "SearchPokemon.scss";
-@import "Error404.scss";
+@import "Variables";
+@import "Mixins";
+@import "Generals";
+@import "Header";
+@import "Home";
+@import "Characters";
+@import "SearchPokemon";
+@import "Error404";
