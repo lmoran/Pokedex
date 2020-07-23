@@ -4,8 +4,8 @@ cache:
     - ~/.npm
 node_js:
   - "12"
-install:
-  - npm install sass
+before_install:
+  - gem install sass
 git:
   depth: 3
 script:
