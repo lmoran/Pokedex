@@ -11,7 +11,7 @@ git:
   depth: 3
 script:
   - yarn build
-  - "testtravis.rb"
+  - "test/travis.rb"
 
 deploy:
   provider: pages
