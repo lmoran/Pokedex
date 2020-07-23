@@ -4,21 +4,10 @@ cache:
     - ~/.npm
 node_js:
   - "12"
-<<<<<<< HEAD
-=======
-# before_install:
-#   - gem update --system 2.1.11
-#   - rvm install 2.2.4
-#   - gem --version
-#   - gem install sass
-#   - gem install scss-lint
-#   - npm install -g grunt-cli
->>>>>>> 40c009ecf2475fc35ece379b2c25d7df2f463449
 git:
   depth: 3
 script:
   - yarn build
-
 deploy:
   provider: pages
   edge: true
