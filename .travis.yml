@@ -4,6 +4,13 @@ cache:
     - ~/.npm
 node_js:
   - "12"
+before_install:
+  - gem update --system 2.1.11
+  - rvm install 2.2.4
+  - gem --version
+  - gem install sass
+  - gem install scss-lint
+  - npm install -g grunt-cli
 git:
   depth: 3
 script:
